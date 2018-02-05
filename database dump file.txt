@@ -1,0 +1,85 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Dec 17, 2016 at 07:02 AM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `irctc`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tickets`
+--
+
+CREATE TABLE `tickets` (
+  `pnr` int(10) NOT NULL,
+  `ticket` int(3) NOT NULL,
+  `tno` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tickets`
+--
+
+INSERT INTO `tickets` (`pnr`, `ticket`, `tno`) VALUES
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `trains`
+--
+
+CREATE TABLE `trains` (
+  `tno` int(13) NOT NULL,
+  `tname` varchar(30) NOT NULL,
+  `fr` varchar(30) NOT NULL,
+  `tr` varchar(30) NOT NULL,
+  `atime` varchar(10) NOT NULL,
+  `dtime` varchar(10) NOT NULL,
+  `genseats` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `trains`
+--
+
+INSERT INTO `trains` (`tno`, `tname`, `fr`, `tr`, `atime`, `dtime`, `genseats`) VALUES
+(12962, 'Avantika Express', 'DELHI', 'MUMBAI', '01:00', '00:30', 237),
+(12293, 'ALD Duronto Express', 'MUMBAI', 'ALLAHABAD', '08:00', '04:00', 20),
+(22442, 'ALD Intercity ', 'KANPUR', 'ALLAHABAD', '10:00', '13:00', 98),
+(12276, 'ALD Duronto Express', 'DELHI', 'ALLAHABAD', '10:00', '20:00', 305),
+(17225, 'Amaravati Express', 'CHENNAI', 'ALLAHABAD', '15:00', '14:52', 49),
+(12854, 'Avantika Express', 'BHOPAL', 'ALLAHABAD', '17:00', '23:30', 95),
+(12961, 'Avantika Express', 'MUMBAI', 'DELHI', '00:30', '19:30', 235),
+(12293, 'ALD Duronto Express', 'ALLAHABAD', 'MUMBAI', '10:00', '02:00', 90),
+(22441, 'ALD Intercity ', 'ALLAHABAD', 'KANPUR', '15:00', '18:00', 5),
+(17225, 'Amaravati Express', 'ALLAHABAD', 'CHENNAI', '18:00', '16:30', 301);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `name` varchar(30) NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  `phone` varchar(12) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`name`, `email`, `password`, `phone`) VALUES
+('u', 'u@gmail.com', 'u', '1'),
+('s', 's@gmail.com', 's', '1');
